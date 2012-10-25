@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <xsd:element name="root">
+    <xsd:complexType>
+      <xsd:sequence>
+
+        <!--references -->
+        <xsd:element ref="nonnull_reference" />
+        <xsd:element ref="nullable_reference"/>
+
+        <!--primitive types, nullable -->
+        <xsd:element name="nullable_int_field" type="xsd:int" minOccurs="0" maxOccurs="1"/>
+        <xsd:element name="nullable_long_field" type="xsd:long" minOccurs="0" maxOccurs="1"/>
+        <xsd:element name="nullable_float_field" type="xsd:float" minOccurs="0" maxOccurs="1"/>
+        <xsd:element name="nullable_bool_field" type="xsd:boolean" minOccurs="0" maxOccurs="1"/>
+        <xsd:element name="nullable_double_field" type="xsd:double" minOccurs="0" maxOccurs="1"/>
+        <xsd:element name="nullable_byte_field" type="xsd:byte" minOccurs="0" maxOccurs="1"/>
+        <xsd:element name="nullable_short_field" type="xsd:short" minOccurs="0" maxOccurs="1"/>
+
+        <!--primitive types, nonnull -->
+        <xsd:element name="nonnull_int_field" type="xsd:int" minOccurs="1" maxOccurs="1"/>
+        <xsd:element name="nonnull_long_field" type="xsd:long" minOccurs="1" maxOccurs="1"/>
+        <xsd:element name="nonnull_float_field" type="xsd:float" minOccurs="1" maxOccurs="1"/>
+        <xsd:element name="nonnull_bool_field" type="xsd:boolean" minOccurs="1" maxOccurs="1"/>
+        <xsd:element name="nonnull_double_field" type="xsd:double" minOccurs="1" maxOccurs="1"/>
+        <xsd:element name="nonnull_byte_field" type="xsd:byte" minOccurs="1" maxOccurs="1"/>
+        <xsd:element name="nonnull_short_field" type="xsd:short" minOccurs="1" maxOccurs="1"/>
+
+        <!--nullable types-->
+        <xsd:element name="nullableString" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+        <xsd:element name="nullable_string2" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+        <xsd:element name="nullableList" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+
+        <!--nonnull types-->
+        <xsd:element name="nonnullString" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+        <xsd:element name="nonnull_string2" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+        <xsd:element name="NonnullList" type="xsd:string" minOccurs="1" maxOccurs="unbounded"/>
+
+      </xsd:sequence>
+
+      <xsd:attribute name="requiredAttribute" use="required" type="xsd:string"/>
+      <xsd:attribute name="optionalAttribute" use="optional" type="xsd:string"/>
+
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="nonnull_reference" nillable="false" type="xsd:string"/>
+  <xsd:element name="nullable_reference" nillable="true" type="xsd:string"/>
+
+</xsd:schema>
