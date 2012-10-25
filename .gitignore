@@ -1,5 +1,6 @@
 *.iml
-target 
+*.ipr
+target
 
 *.class
 
